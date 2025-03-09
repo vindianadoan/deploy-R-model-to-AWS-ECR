@@ -1,0 +1,946 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.base
+#1 transferring dockerfile: 750B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/r-base:4.4.1
+#2 ...
+
+#3 [auth] library/r-base:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/r-base:4.4.1
+#2 DONE 2.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/r-base:4.4.1@sha256:e7032f2f6fd273ee944a717b436bc66d1a89b1b90a9bbcaafcf1318d68a7d8b2
+#5 resolve docker.io/library/r-base:4.4.1@sha256:e7032f2f6fd273ee944a717b436bc66d1a89b1b90a9bbcaafcf1318d68a7d8b2 0.0s done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 32B done
+#6 DONE 0.0s
+
+#7 [2/5] RUN apt-get update && apt-get install -y     libcurl4-openssl-dev     libssl-dev     libxml2-dev     libsodium-dev     libfontconfig1-dev     libfreetype6-dev     build-essential     pkg-config  && rm -rf /var/lib/apt/lists/*
+#7 0.539 Get:2 http://deb.debian.org/debian testing InRelease [175 kB]
+#7 0.861 Get:3 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
+#7 1.159 Get:4 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+#7 1.470 Get:1 http://deb.debian.org/debian sid InRelease [205 kB]
+#7 1.504 Get:5 http://deb.debian.org/debian testing/main amd64 Packages [9,532 kB]
+#7 2.050 Get:6 http://deb.debian.org/debian sid/main amd64 Packages [10.1 MB]
+#7 4.551 Fetched 20.1 MB in 4s (4,941 kB/s)
+#7 4.551 Reading package lists...
+#7 5.660 Reading package lists...
+#7 6.792 Building dependency tree...
+#7 7.008 Reading state information...
+#7 7.341 build-essential is already the newest version (12.12).
+#7 7.341 build-essential set to manually installed.
+#7 7.341 The following package was automatically installed and is no longer required:
+#7 7.342   libldap-2.5-0
+#7 7.342 Use 'apt autoremove' to remove it.
+#7 7.344 The following additional packages will be installed:
+#7 7.344   bsdutils comerr-dev e2fsprogs fontconfig fontconfig-config krb5-multidev
+#7 7.345   libblkid1 libbrotli-dev libbrotli1 libcom-err2 libcurl4t64 libevent-2.1-7t64
+#7 7.345   libexpat1 libexpat1-dev libext2fs2t64 libfontconfig-dev libfontconfig1
+#7 7.345   libgmp-dev libgmp10 libgmpxx4ldbl libgnutls-dane0t64 libgnutls-openssl27t64
+#7 7.345   libgnutls28-dev libgnutls30t64 libgssapi-krb5-2 libgssrpc4t64 libhogweed6t64
+#7 7.345   libidn2-0 libidn2-dev libk5crypto3 libkadm5clnt-mit12 libkadm5srv-mit12
+#7 7.345   libkdb5-10t64 libkrb5-3 libkrb5-dev libkrb5support0 libldap-dev libldap2
+#7 7.345   libmount1 libnettle8t64 libnghttp2-14 libnghttp2-dev libnghttp3-9
+#7 7.345   libnghttp3-dev libp11-kit-dev libp11-kit0 libpkgconf3 libpsl-dev libpsl5t64
+#7 7.346   librtmp-dev librtmp1 libsmartcols1 libsodium23 libss2 libssh2-1-dev
+#7 7.346   libssh2-1t64 libssl3t64 libtasn1-6 libtasn1-6-dev libunbound8 libuuid1
+#7 7.346   libxml2 libzstd-dev libzstd1 login logsave mount nettle-dev openssl
+#7 7.347   openssl-provider-legacy pkgconf pkgconf-bin util-linux uuid-dev
+#7 7.350 Suggested packages:
+#7 7.350   doc-base krb5-doc libcurl4-doc libidn-dev freetype2-doc gmp-doc libgmp10-doc
+#7 7.350   libmpfr-dev dns-root-data gnutls-bin gnutls-doc krb5-user libnghttp2-doc
+#7 7.350   p11-kit-doc libssl-doc
+#7 7.350 Recommended packages:
+#7 7.350   libldap-common libtasn1-doc
+#7 8.261 The following NEW packages will be installed:
+#7 8.261   comerr-dev krb5-multidev libbrotli-dev libcurl4-openssl-dev
+#7 8.261   libevent-2.1-7t64 libexpat1-dev libfontconfig-dev libfontconfig1-dev
+#7 8.261   libfreetype-dev libgmp-dev libgmpxx4ldbl libgnutls-dane0t64
+#7 8.261   libgnutls-openssl27t64 libgnutls28-dev libgssrpc4t64 libidn2-dev
+#7 8.261   libkadm5clnt-mit12 libkadm5srv-mit12 libkdb5-10t64 libkrb5-dev libldap-dev
+#7 8.261   libldap2 libnghttp2-dev libnghttp3-9 libnghttp3-dev libp11-kit-dev
+#7 8.263   libpsl-dev librtmp-dev libsodium-dev libsodium23 libssh2-1-dev libssl-dev
+#7 8.263   libtasn1-6-dev libunbound8 libxml2 libxml2-dev libzstd-dev nettle-dev
+#7 8.265   pkg-config uuid-dev
+#7 8.266 The following packages will be upgraded:
+#7 8.267   bsdutils e2fsprogs fontconfig fontconfig-config libblkid1 libbrotli1
+#7 8.267   libcom-err2 libcurl4t64 libexpat1 libext2fs2t64 libfontconfig1 libgmp10
+#7 8.268   libgnutls30t64 libgssapi-krb5-2 libhogweed6t64 libidn2-0 libk5crypto3
+#7 8.268   libkrb5-3 libkrb5support0 libmount1 libnettle8t64 libnghttp2-14 libp11-kit0
+#7 8.269   libpkgconf3 libpsl5t64 librtmp1 libsmartcols1 libss2 libssh2-1t64 libssl3t64
+#7 8.269   libtasn1-6 libuuid1 libzstd1 login logsave mount openssl
+#7 8.270   openssl-provider-legacy pkgconf pkgconf-bin util-linux
+#7 8.384 41 upgraded, 40 newly installed, 0 to remove and 198 not upgraded.
+#7 8.384 Need to get 28.5 MB of archives.
+#7 8.384 After this operation, 53.1 MB of additional disk space will be used.
+#7 8.384 Get:1 http://deb.debian.org/debian sid/main amd64 bsdutils amd64 1:2.40.4-5 [106 kB]
+#7 8.440 Get:2 http://deb.debian.org/debian sid/main amd64 libuuid1 amd64 2.40.4-5 [36.5 kB]
+#7 8.444 Get:3 http://deb.debian.org/debian sid/main amd64 libblkid1 amd64 2.40.4-5 [169 kB]
+#7 8.503 Get:4 http://deb.debian.org/debian sid/main amd64 libmount1 amd64 2.40.4-5 [200 kB]
+#7 8.602 Get:5 http://deb.debian.org/debian sid/main amd64 libsmartcols1 amd64 2.40.4-5 [140 kB]
+#7 8.636 Get:6 http://deb.debian.org/debian sid/main amd64 util-linux amd64 2.40.4-5 [1,205 kB]
+#7 8.730 Get:7 http://deb.debian.org/debian sid/main amd64 mount amd64 2.40.4-5 [156 kB]
+#7 8.758 Get:8 http://deb.debian.org/debian sid/main amd64 login amd64 1:4.16.0-2+really2.40.4-5 [88.7 kB]
+#7 8.800 Get:9 http://deb.debian.org/debian sid/main amd64 logsave amd64 1.47.2-1 [23.9 kB]
+#7 8.841 Get:10 http://deb.debian.org/debian sid/main amd64 libext2fs2t64 amd64 1.47.2-1 [212 kB]
+#7 8.874 Get:11 http://deb.debian.org/debian sid/main amd64 e2fsprogs amd64 1.47.2-1 [590 kB]
+#7 8.929 Get:12 http://deb.debian.org/debian sid/main amd64 libgmp10 amd64 2:6.3.0+dfsg-3 [560 kB]
+#7 8.974 Get:13 http://deb.debian.org/debian sid/main amd64 libnettle8t64 amd64 3.10.1-1 [305 kB]
+#7 9.007 Get:14 http://deb.debian.org/debian sid/main amd64 libhogweed6t64 amd64 3.10.1-1 [335 kB]
+#7 9.035 Get:15 http://deb.debian.org/debian sid/main amd64 libidn2-0 amd64 2.3.7-2+b1 [129 kB]
+#7 9.068 Get:16 http://deb.debian.org/debian sid/main amd64 libp11-kit0 amd64 0.25.5-3 [425 kB]
+#7 9.118 Get:17 http://deb.debian.org/debian sid/main amd64 libtasn1-6 amd64 4.20.0-2 [49.9 kB]
+#7 9.157 Get:18 http://deb.debian.org/debian sid/main amd64 libgnutls30t64 amd64 3.8.9-2 [1,464 kB]
+#7 9.287 Get:19 http://deb.debian.org/debian sid/main amd64 openssl-provider-legacy amd64 3.4.1-1 [302 kB]
+#7 9.324 Get:20 http://deb.debian.org/debian sid/main amd64 libzstd1 amd64 1.5.6+dfsg-2 [300 kB]
+#7 9.353 Get:21 http://deb.debian.org/debian sid/main amd64 libssl3t64 amd64 3.4.1-1 [2,304 kB]
+#7 9.474 Get:22 http://deb.debian.org/debian sid/main amd64 libcom-err2 amd64 1.47.2-1 [24.0 kB]
+#7 9.495 Get:23 http://deb.debian.org/debian sid/main amd64 comerr-dev amd64 2.1-1.47.2-1 [55.7 kB]
+#7 9.524 Get:24 http://deb.debian.org/debian sid/main amd64 fontconfig-config amd64 2.15.0-2 [317 kB]
+#7 9.571 Get:25 http://deb.debian.org/debian sid/main amd64 libexpat1 amd64 2.6.4-1 [106 kB]
+#7 9.600 Get:26 http://deb.debian.org/debian sid/main amd64 libfontconfig1 amd64 2.15.0-2 [391 kB]
+#7 9.658 Get:27 http://deb.debian.org/debian sid/main amd64 fontconfig amd64 2.15.0-2 [463 kB]
+#7 9.714 Get:28 http://deb.debian.org/debian sid/main amd64 libgssapi-krb5-2 amd64 1.21.3-4 [138 kB]
+#7 9.769 Get:29 http://deb.debian.org/debian sid/main amd64 libkrb5-3 amd64 1.21.3-4 [326 kB]
+#7 9.827 Get:30 http://deb.debian.org/debian sid/main amd64 libkrb5support0 amd64 1.21.3-4 [32.8 kB]
+#7 9.863 Get:31 http://deb.debian.org/debian sid/main amd64 libk5crypto3 amd64 1.21.3-4 [80.9 kB]
+#7 9.910 Get:32 http://deb.debian.org/debian sid/main amd64 libgssrpc4t64 amd64 1.21.3-4 [60.0 kB]
+#7 9.938 Get:33 http://deb.debian.org/debian sid/main amd64 libkadm5clnt-mit12 amd64 1.21.3-4 [42.2 kB]
+#7 9.972 Get:34 http://deb.debian.org/debian sid/main amd64 libkdb5-10t64 amd64 1.21.3-4 [42.4 kB]
+#7 10.01 Get:35 http://deb.debian.org/debian sid/main amd64 libkadm5srv-mit12 amd64 1.21.3-4 [54.2 kB]
+#7 10.05 Get:36 http://deb.debian.org/debian sid/main amd64 krb5-multidev amd64 1.21.3-4 [126 kB]
+#7 10.09 Get:37 http://deb.debian.org/debian sid/main amd64 libbrotli1 amd64 1.1.0-2+b7 [307 kB]
+#7 10.15 Get:38 http://deb.debian.org/debian sid/main amd64 libbrotli-dev amd64 1.1.0-2+b7 [316 kB]
+#7 10.18 Get:39 http://deb.debian.org/debian sid/main amd64 libldap2 amd64 2.6.9+dfsg-1 [192 kB]
+#7 10.23 Get:40 http://deb.debian.org/debian sid/main amd64 libnghttp2-14 amd64 1.64.0-1 [75.5 kB]
+#7 10.28 Get:41 http://deb.debian.org/debian sid/main amd64 libnghttp3-9 amd64 1.8.0-1 [67.7 kB]
+#7 10.33 Get:42 http://deb.debian.org/debian sid/main amd64 libpsl5t64 amd64 0.21.2-1.1+b1 [57.2 kB]
+#7 10.37 Get:43 http://deb.debian.org/debian sid/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b5 [58.8 kB]
+#7 10.40 Get:44 http://deb.debian.org/debian sid/main amd64 libssh2-1t64 amd64 1.11.1-1 [245 kB]
+#7 10.44 Get:45 http://deb.debian.org/debian sid/main amd64 libcurl4t64 amd64 8.12.1-3 [369 kB]
+#7 10.49 Get:46 http://deb.debian.org/debian sid/main amd64 libidn2-dev amd64 2.3.7-2+b1 [123 kB]
+#7 10.52 Get:47 http://deb.debian.org/debian sid/main amd64 libkrb5-dev amd64 1.21.3-4 [15.9 kB]
+#7 10.56 Get:48 http://deb.debian.org/debian sid/main amd64 libldap-dev amd64 2.6.9+dfsg-1 [307 kB]
+#7 10.60 Get:49 http://deb.debian.org/debian sid/main amd64 libpkgconf3 amd64 1.8.1-4 [36.4 kB]
+#7 10.64 Get:50 http://deb.debian.org/debian sid/main amd64 pkgconf-bin amd64 1.8.1-4 [30.2 kB]
+#7 10.68 Get:51 http://deb.debian.org/debian sid/main amd64 pkgconf amd64 1.8.1-4 [26.2 kB]
+#7 10.73 Get:52 http://deb.debian.org/debian sid/main amd64 libnghttp2-dev amd64 1.64.0-1 [115 kB]
+#7 10.77 Get:53 http://deb.debian.org/debian sid/main amd64 libnghttp3-dev amd64 1.8.0-1 [91.3 kB]
+#7 10.81 Get:54 http://deb.debian.org/debian sid/main amd64 libpsl-dev amd64 0.21.2-1.1+b1 [77.6 kB]
+#7 10.86 Get:55 http://deb.debian.org/debian sid/main amd64 libgmpxx4ldbl amd64 2:6.3.0+dfsg-3 [329 kB]
+#7 10.90 Get:56 http://deb.debian.org/debian sid/main amd64 libgmp-dev amd64 2:6.3.0+dfsg-3 [642 kB]
+#7 10.95 Get:57 http://deb.debian.org/debian sid/main amd64 libevent-2.1-7t64 amd64 2.1.12-stable-10+b1 [182 kB]
+#7 10.98 Get:58 http://deb.debian.org/debian sid/main amd64 libunbound8 amd64 1.22.0-1+b1 [598 kB]
+#7 11.03 Get:59 http://deb.debian.org/debian sid/main amd64 libgnutls-dane0t64 amd64 3.8.9-2 [455 kB]
+#7 11.08 Get:60 http://deb.debian.org/debian sid/main amd64 libgnutls-openssl27t64 amd64 3.8.9-2 [455 kB]
+#7 11.17 Get:61 http://deb.debian.org/debian sid/main amd64 libp11-kit-dev amd64 0.25.5-3 [208 kB]
+#7 11.18 Get:62 http://deb.debian.org/debian sid/main amd64 libtasn1-6-dev amd64 4.20.0-2 [99.2 kB]
+#7 11.21 Get:63 http://deb.debian.org/debian sid/main amd64 nettle-dev amd64 3.10.1-1 [1,318 kB]
+#7 11.30 Get:64 http://deb.debian.org/debian sid/main amd64 libgnutls28-dev amd64 3.8.9-2 [1,401 kB]
+#7 11.39 Get:65 http://deb.debian.org/debian sid/main amd64 librtmp-dev amd64 2.4+20151223.gitfa8646d.1-2+b5 [68.0 kB]
+#7 11.39 Get:66 http://deb.debian.org/debian sid/main amd64 libssl-dev amd64 3.4.1-1 [2,787 kB]
+#7 11.53 Get:67 http://deb.debian.org/debian sid/main amd64 libssh2-1-dev amd64 1.11.1-1 [393 kB]
+#7 11.56 Get:68 http://deb.debian.org/debian sid/main amd64 libzstd-dev amd64 1.5.6+dfsg-2 [365 kB]
+#7 11.58 Get:69 http://deb.debian.org/debian sid/main amd64 libcurl4-openssl-dev amd64 8.12.1-3 [483 kB]
+#7 11.62 Get:70 http://deb.debian.org/debian sid/main amd64 libexpat1-dev amd64 2.6.4-1 [158 kB]
+#7 11.64 Get:71 http://deb.debian.org/debian sid/main amd64 libfreetype-dev amd64 2.13.3+dfsg-1 [622 kB]
+#7 11.69 Get:72 http://deb.debian.org/debian sid/main amd64 uuid-dev amd64 2.40.4-5 [47.8 kB]
+#7 11.72 Get:73 http://deb.debian.org/debian sid/main amd64 libfontconfig-dev amd64 2.15.0-2 [414 kB]
+#7 11.76 Get:74 http://deb.debian.org/debian sid/main amd64 libfontconfig1-dev amd64 2.15.0-2 [269 kB]
+#7 11.81 Get:75 http://deb.debian.org/debian sid/main amd64 libsodium23 amd64 1.0.18-1+b2 [165 kB]
+#7 11.85 Get:76 http://deb.debian.org/debian sid/main amd64 libsodium-dev amd64 1.0.18-1+b2 [184 kB]
+#7 11.88 Get:77 http://deb.debian.org/debian sid/main amd64 libss2 amd64 1.47.2-1 [28.7 kB]
+#7 11.93 Get:78 http://deb.debian.org/debian sid/main amd64 libxml2 amd64 2.12.7+dfsg+really2.9.14-0.2+b2 [699 kB]
+#7 11.99 Get:79 http://deb.debian.org/debian sid/main amd64 libxml2-dev amd64 2.12.7+dfsg+really2.9.14-0.2+b2 [794 kB]
+#7 12.05 Get:80 http://deb.debian.org/debian sid/main amd64 openssl amd64 3.4.1-1 [1,427 kB]
+#7 12.14 Get:81 http://deb.debian.org/debian sid/main amd64 pkg-config amd64 1.8.1-4 [14.0 kB]
+#7 12.49 debconf: delaying package configuration, since apt-utils is not installed
+#7 12.54 Fetched 28.5 MB in 4s (7,396 kB/s)
+#7 12.58 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 12.75 Preparing to unpack .../bsdutils_1%3a2.40.4-5_amd64.deb ...
+#7 12.77 Unpacking bsdutils (1:2.40.4-5) over (1:2.40.2-9) ...
+#7 12.90 Setting up bsdutils (1:2.40.4-5) ...
+#7 12.95 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 12.99 Preparing to unpack .../libuuid1_2.40.4-5_amd64.deb ...
+#7 13.00 Unpacking libuuid1:amd64 (2.40.4-5) over (2.40.2-9) ...
+#7 13.06 Setting up libuuid1:amd64 (2.40.4-5) ...
+#7 13.10 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 13.12 Preparing to unpack .../libblkid1_2.40.4-5_amd64.deb ...
+#7 13.13 Unpacking libblkid1:amd64 (2.40.4-5) over (2.40.2-9) ...
+#7 13.20 Setting up libblkid1:amd64 (2.40.4-5) ...
+#7 13.25 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 13.26 Preparing to unpack .../libmount1_2.40.4-5_amd64.deb ...
+#7 13.27 Unpacking libmount1:amd64 (2.40.4-5) over (2.40.2-9) ...
+#7 13.35 Setting up libmount1:amd64 (2.40.4-5) ...
+#7 13.39 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 13.40 Preparing to unpack .../libsmartcols1_2.40.4-5_amd64.deb ...
+#7 13.42 Unpacking libsmartcols1:amd64 (2.40.4-5) over (2.40.2-9) ...
+#7 13.48 Setting up libsmartcols1:amd64 (2.40.4-5) ...
+#7 13.53 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19350 files and directories currently installed.)
+#7 13.54 Preparing to unpack .../util-linux_2.40.4-5_amd64.deb ...
+#7 13.55 Unpacking util-linux (2.40.4-5) over (2.40.2-9) ...
+#7 14.19 Setting up util-linux (2.40.4-5) ...
+#7 14.38 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19343 files and directories currently installed.)
+#7 14.39 Preparing to unpack .../mount_2.40.4-5_amd64.deb ...
+#7 14.40 Unpacking mount (2.40.4-5) over (2.40.2-9) ...
+#7 14.49 Preparing to unpack .../login_1%3a4.16.0-2+really2.40.4-5_amd64.deb ...
+#7 14.52 Unpacking login (1:4.16.0-2+really2.40.4-5) over (1:4.16.0-2+really2.40.2-9) ...
+#7 14.60 Preparing to unpack .../logsave_1.47.2-1_amd64.deb ...
+#7 14.61 Unpacking logsave (1.47.2-1) over (1.47.1-1) ...
+#7 14.66 Preparing to unpack .../libext2fs2t64_1.47.2-1_amd64.deb ...
+#7 14.68 Leaving 'diversion of /lib/x86_64-linux-gnu/libe2p.so.2 to /lib/x86_64-linux-gnu/libe2p.so.2.usr-is-merged by libext2fs2t64'
+#7 14.68 Leaving 'diversion of /lib/x86_64-linux-gnu/libe2p.so.2.3 to /lib/x86_64-linux-gnu/libe2p.so.2.3.usr-is-merged by libext2fs2t64'
+#7 14.69 Leaving 'diversion of /lib/x86_64-linux-gnu/libext2fs.so.2 to /lib/x86_64-linux-gnu/libext2fs.so.2.usr-is-merged by libext2fs2t64'
+#7 14.69 Leaving 'diversion of /lib/x86_64-linux-gnu/libext2fs.so.2.4 to /lib/x86_64-linux-gnu/libext2fs.so.2.4.usr-is-merged by libext2fs2t64'
+#7 14.69 Unpacking libext2fs2t64:amd64 (1.47.2-1) over (1.47.1-1) ...
+#7 14.75 Setting up libext2fs2t64:amd64 (1.47.2-1) ...
+#7 14.79 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19346 files and directories currently installed.)
+#7 14.80 Preparing to unpack .../e2fsprogs_1.47.2-1_amd64.deb ...
+#7 14.82 Unpacking e2fsprogs (1.47.2-1) over (1.47.1-1) ...
+#7 15.01 Preparing to unpack .../libgmp10_2%3a6.3.0+dfsg-3_amd64.deb ...
+#7 15.02 Unpacking libgmp10:amd64 (2:6.3.0+dfsg-3) over (2:6.3.0+dfsg-2+b1) ...
+#7 15.09 Setting up libgmp10:amd64 (2:6.3.0+dfsg-3) ...
+#7 15.14 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 15.16 Preparing to unpack .../libnettle8t64_3.10.1-1_amd64.deb ...
+#7 15.18 Unpacking libnettle8t64:amd64 (3.10.1-1) over (3.10-1) ...
+#7 15.24 Setting up libnettle8t64:amd64 (3.10.1-1) ...
+#7 15.29 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 15.30 Preparing to unpack .../libhogweed6t64_3.10.1-1_amd64.deb ...
+#7 15.31 Unpacking libhogweed6t64:amd64 (3.10.1-1) over (3.10-1) ...
+#7 15.38 Setting up libhogweed6t64:amd64 (3.10.1-1) ...
+#7 15.42 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 15.44 Preparing to unpack .../libidn2-0_2.3.7-2+b1_amd64.deb ...
+#7 15.45 Unpacking libidn2-0:amd64 (2.3.7-2+b1) over (2.3.7-2) ...
+#7 15.60 Setting up libidn2-0:amd64 (2.3.7-2+b1) ...
+#7 15.64 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19346 files and directories currently installed.)
+#7 15.66 Preparing to unpack .../libp11-kit0_0.25.5-3_amd64.deb ...
+#7 15.67 Unpacking libp11-kit0:amd64 (0.25.5-3) over (0.25.5-2) ...
+#7 15.75 Setting up libp11-kit0:amd64 (0.25.5-3) ...
+#7 15.79 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19346 files and directories currently installed.)
+#7 15.80 Preparing to unpack .../libtasn1-6_4.20.0-2_amd64.deb ...
+#7 15.81 Unpacking libtasn1-6:amd64 (4.20.0-2) over (4.19.0-3+b2) ...
+#7 15.86 Setting up libtasn1-6:amd64 (4.20.0-2) ...
+#7 15.90 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 15.92 Preparing to unpack .../libgnutls30t64_3.8.9-2_amd64.deb ...
+#7 15.93 Unpacking libgnutls30t64:amd64 (3.8.9-2) over (3.8.6-2) ...
+#7 16.08 Setting up libgnutls30t64:amd64 (3.8.9-2) ...
+#7 16.11 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 16.13 Preparing to unpack .../openssl-provider-legacy_3.4.1-1_amd64.deb ...
+#7 16.14 Unpacking openssl-provider-legacy (3.4.1-1) over (3.3.2-1) ...
+#7 16.19 Setting up openssl-provider-legacy (3.4.1-1) ...
+#7 16.23 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 16.24 Preparing to unpack .../libzstd1_1.5.6+dfsg-2_amd64.deb ...
+#7 16.25 Unpacking libzstd1:amd64 (1.5.6+dfsg-2) over (1.5.6+dfsg-1) ...
+#7 16.31 Setting up libzstd1:amd64 (1.5.6+dfsg-2) ...
+#7 16.35 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 16.36 Preparing to unpack .../libssl3t64_3.4.1-1_amd64.deb ...
+#7 16.37 Unpacking libssl3t64:amd64 (3.4.1-1) over (3.3.2-1) ...
+#7 16.54 Setting up libssl3t64:amd64 (3.4.1-1) ...
+#7 16.59 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19345 files and directories currently installed.)
+#7 16.60 Preparing to unpack .../00-libcom-err2_1.47.2-1_amd64.deb ...
+#7 16.61 Unpacking libcom-err2:amd64 (1.47.2-1) over (1.47.1-1) ...
+#7 16.65 Selecting previously unselected package comerr-dev:amd64.
+#7 16.65 Preparing to unpack .../01-comerr-dev_2.1-1.47.2-1_amd64.deb ...
+#7 16.66 Unpacking comerr-dev:amd64 (2.1-1.47.2-1) ...
+#7 16.70 Preparing to unpack .../02-fontconfig-config_2.15.0-2_amd64.deb ...
+#7 16.71 Unpacking fontconfig-config (2.15.0-2) over (2.15.0-1.1) ...
+#7 16.85 Preparing to unpack .../03-libexpat1_2.6.4-1_amd64.deb ...
+#7 16.86 Unpacking libexpat1:amd64 (2.6.4-1) over (2.6.3-1) ...
+#7 16.91 Preparing to unpack .../04-libfontconfig1_2.15.0-2_amd64.deb ...
+#7 16.92 Unpacking libfontconfig1:amd64 (2.15.0-2) over (2.15.0-1.1) ...
+#7 16.98 Preparing to unpack .../05-fontconfig_2.15.0-2_amd64.deb ...
+#7 16.99 Unpacking fontconfig (2.15.0-2) over (2.15.0-1.1) ...
+#7 17.11 Preparing to unpack .../06-libgssapi-krb5-2_1.21.3-4_amd64.deb ...
+#7 17.12 Unpacking libgssapi-krb5-2:amd64 (1.21.3-4) over (1.21.3-3) ...
+#7 17.18 Preparing to unpack .../07-libkrb5-3_1.21.3-4_amd64.deb ...
+#7 17.19 Unpacking libkrb5-3:amd64 (1.21.3-4) over (1.21.3-3) ...
+#7 17.27 Preparing to unpack .../08-libkrb5support0_1.21.3-4_amd64.deb ...
+#7 17.28 Unpacking libkrb5support0:amd64 (1.21.3-4) over (1.21.3-3) ...
+#7 17.33 Preparing to unpack .../09-libk5crypto3_1.21.3-4_amd64.deb ...
+#7 17.34 Unpacking libk5crypto3:amd64 (1.21.3-4) over (1.21.3-3) ...
+#7 17.39 Selecting previously unselected package libgssrpc4t64:amd64.
+#7 17.39 Preparing to unpack .../10-libgssrpc4t64_1.21.3-4_amd64.deb ...
+#7 17.39 Unpacking libgssrpc4t64:amd64 (1.21.3-4) ...
+#7 17.44 Selecting previously unselected package libkadm5clnt-mit12:amd64.
+#7 17.44 Preparing to unpack .../11-libkadm5clnt-mit12_1.21.3-4_amd64.deb ...
+#7 17.44 Unpacking libkadm5clnt-mit12:amd64 (1.21.3-4) ...
+#7 17.49 Selecting previously unselected package libkdb5-10t64:amd64.
+#7 17.49 Preparing to unpack .../12-libkdb5-10t64_1.21.3-4_amd64.deb ...
+#7 17.49 Unpacking libkdb5-10t64:amd64 (1.21.3-4) ...
+#7 17.54 Selecting previously unselected package libkadm5srv-mit12:amd64.
+#7 17.54 Preparing to unpack .../13-libkadm5srv-mit12_1.21.3-4_amd64.deb ...
+#7 17.54 Unpacking libkadm5srv-mit12:amd64 (1.21.3-4) ...
+#7 17.58 Selecting previously unselected package krb5-multidev:amd64.
+#7 17.58 Preparing to unpack .../14-krb5-multidev_1.21.3-4_amd64.deb ...
+#7 17.58 Unpacking krb5-multidev:amd64 (1.21.3-4) ...
+#7 17.64 Preparing to unpack .../15-libbrotli1_1.1.0-2+b7_amd64.deb ...
+#7 17.65 Unpacking libbrotli1:amd64 (1.1.0-2+b7) over (1.1.0-2+b4) ...
+#7 17.74 Selecting previously unselected package libbrotli-dev:amd64.
+#7 17.74 Preparing to unpack .../16-libbrotli-dev_1.1.0-2+b7_amd64.deb ...
+#7 17.75 Unpacking libbrotli-dev:amd64 (1.1.0-2+b7) ...
+#7 17.84 Selecting previously unselected package libldap2:amd64.
+#7 17.84 Preparing to unpack .../17-libldap2_2.6.9+dfsg-1_amd64.deb ...
+#7 17.85 Unpacking libldap2:amd64 (2.6.9+dfsg-1) ...
+#7 17.92 Preparing to unpack .../18-libnghttp2-14_1.64.0-1_amd64.deb ...
+#7 17.93 Unpacking libnghttp2-14:amd64 (1.64.0-1) over (1.63.0-1) ...
+#7 18.01 Selecting previously unselected package libnghttp3-9:amd64.
+#7 18.01 Preparing to unpack .../19-libnghttp3-9_1.8.0-1_amd64.deb ...
+#7 18.01 Unpacking libnghttp3-9:amd64 (1.8.0-1) ...
+#7 18.07 Preparing to unpack .../20-libpsl5t64_0.21.2-1.1+b1_amd64.deb ...
+#7 18.08 Unpacking libpsl5t64:amd64 (0.21.2-1.1+b1) over (0.21.2-1.1) ...
+#7 18.16 Preparing to unpack .../21-librtmp1_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb ...
+#7 18.17 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) over (2.4+20151223.gitfa8646d.1-2+b4) ...
+#7 18.25 Preparing to unpack .../22-libssh2-1t64_1.11.1-1_amd64.deb ...
+#7 18.26 Unpacking libssh2-1t64:amd64 (1.11.1-1) over (1.11.0-7) ...
+#7 18.34 Preparing to unpack .../23-libcurl4t64_8.12.1-3_amd64.deb ...
+#7 18.36 Unpacking libcurl4t64:amd64 (8.12.1-3) over (8.10.1-2) ...
+#7 18.44 Selecting previously unselected package libidn2-dev:amd64.
+#7 18.44 Preparing to unpack .../24-libidn2-dev_2.3.7-2+b1_amd64.deb ...
+#7 18.45 Unpacking libidn2-dev:amd64 (2.3.7-2+b1) ...
+#7 18.50 Selecting previously unselected package libkrb5-dev:amd64.
+#7 18.50 Preparing to unpack .../25-libkrb5-dev_1.21.3-4_amd64.deb ...
+#7 18.50 Unpacking libkrb5-dev:amd64 (1.21.3-4) ...
+#7 18.55 Selecting previously unselected package libldap-dev:amd64.
+#7 18.55 Preparing to unpack .../26-libldap-dev_2.6.9+dfsg-1_amd64.deb ...
+#7 18.56 Unpacking libldap-dev:amd64 (2.6.9+dfsg-1) ...
+#7 18.66 Preparing to unpack .../27-libpkgconf3_1.8.1-4_amd64.deb ...
+#7 18.67 Unpacking libpkgconf3:amd64 (1.8.1-4) over (1.8.1-3) ...
+#7 18.73 Preparing to unpack .../28-pkgconf-bin_1.8.1-4_amd64.deb ...
+#7 18.74 Unpacking pkgconf-bin (1.8.1-4) over (1.8.1-3) ...
+#7 18.80 Preparing to unpack .../29-pkgconf_1.8.1-4_amd64.deb ...
+#7 18.82 Unpacking pkgconf:amd64 (1.8.1-4) over (1.8.1-3) ...
+#7 18.88 Selecting previously unselected package libnghttp2-dev:amd64.
+#7 18.88 Preparing to unpack .../30-libnghttp2-dev_1.64.0-1_amd64.deb ...
+#7 18.89 Unpacking libnghttp2-dev:amd64 (1.64.0-1) ...
+#7 18.93 Selecting previously unselected package libnghttp3-dev:amd64.
+#7 18.93 Preparing to unpack .../31-libnghttp3-dev_1.8.0-1_amd64.deb ...
+#7 18.94 Unpacking libnghttp3-dev:amd64 (1.8.0-1) ...
+#7 18.97 Selecting previously unselected package libpsl-dev:amd64.
+#7 18.98 Preparing to unpack .../32-libpsl-dev_0.21.2-1.1+b1_amd64.deb ...
+#7 18.98 Unpacking libpsl-dev:amd64 (0.21.2-1.1+b1) ...
+#7 19.08 Selecting previously unselected package libgmpxx4ldbl:amd64.
+#7 19.08 Preparing to unpack .../33-libgmpxx4ldbl_2%3a6.3.0+dfsg-3_amd64.deb ...
+#7 19.09 Unpacking libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-3) ...
+#7 19.13 Selecting previously unselected package libgmp-dev:amd64.
+#7 19.13 Preparing to unpack .../34-libgmp-dev_2%3a6.3.0+dfsg-3_amd64.deb ...
+#7 19.13 Unpacking libgmp-dev:amd64 (2:6.3.0+dfsg-3) ...
+#7 19.20 Selecting previously unselected package libevent-2.1-7t64:amd64.
+#7 19.21 Preparing to unpack .../35-libevent-2.1-7t64_2.1.12-stable-10+b1_amd64.deb ...
+#7 19.21 Unpacking libevent-2.1-7t64:amd64 (2.1.12-stable-10+b1) ...
+#7 19.27 Selecting previously unselected package libunbound8:amd64.
+#7 19.27 Preparing to unpack .../36-libunbound8_1.22.0-1+b1_amd64.deb ...
+#7 19.27 Unpacking libunbound8:amd64 (1.22.0-1+b1) ...
+#7 19.35 Selecting previously unselected package libgnutls-dane0t64:amd64.
+#7 19.35 Preparing to unpack .../37-libgnutls-dane0t64_3.8.9-2_amd64.deb ...
+#7 19.35 Unpacking libgnutls-dane0t64:amd64 (3.8.9-2) ...
+#7 19.40 Selecting previously unselected package libgnutls-openssl27t64:amd64.
+#7 19.40 Preparing to unpack .../38-libgnutls-openssl27t64_3.8.9-2_amd64.deb ...
+#7 19.40 Unpacking libgnutls-openssl27t64:amd64 (3.8.9-2) ...
+#7 19.45 Selecting previously unselected package libp11-kit-dev:amd64.
+#7 19.45 Preparing to unpack .../39-libp11-kit-dev_0.25.5-3_amd64.deb ...
+#7 19.45 Unpacking libp11-kit-dev:amd64 (0.25.5-3) ...
+#7 19.49 Selecting previously unselected package libtasn1-6-dev:amd64.
+#7 19.49 Preparing to unpack .../40-libtasn1-6-dev_4.20.0-2_amd64.deb ...
+#7 19.50 Unpacking libtasn1-6-dev:amd64 (4.20.0-2) ...
+#7 19.54 Selecting previously unselected package nettle-dev:amd64.
+#7 19.54 Preparing to unpack .../41-nettle-dev_3.10.1-1_amd64.deb ...
+#7 19.55 Unpacking nettle-dev:amd64 (3.10.1-1) ...
+#7 19.63 Selecting previously unselected package libgnutls28-dev:amd64.
+#7 19.63 Preparing to unpack .../42-libgnutls28-dev_3.8.9-2_amd64.deb ...
+#7 19.63 Unpacking libgnutls28-dev:amd64 (3.8.9-2) ...
+#7 19.75 Selecting previously unselected package librtmp-dev:amd64.
+#7 19.75 Preparing to unpack .../43-librtmp-dev_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb ...
+#7 19.75 Unpacking librtmp-dev:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+#7 19.79 Selecting previously unselected package libssl-dev:amd64.
+#7 19.79 Preparing to unpack .../44-libssl-dev_3.4.1-1_amd64.deb ...
+#7 19.79 Unpacking libssl-dev:amd64 (3.4.1-1) ...
+#7 20.02 Selecting previously unselected package libssh2-1-dev:amd64.
+#7 20.03 Preparing to unpack .../45-libssh2-1-dev_1.11.1-1_amd64.deb ...
+#7 20.03 Unpacking libssh2-1-dev:amd64 (1.11.1-1) ...
+#7 20.16 Selecting previously unselected package libzstd-dev:amd64.
+#7 20.16 Preparing to unpack .../46-libzstd-dev_1.5.6+dfsg-2_amd64.deb ...
+#7 20.17 Unpacking libzstd-dev:amd64 (1.5.6+dfsg-2) ...
+#7 20.25 Selecting previously unselected package libcurl4-openssl-dev:amd64.
+#7 20.25 Preparing to unpack .../47-libcurl4-openssl-dev_8.12.1-3_amd64.deb ...
+#7 20.26 Unpacking libcurl4-openssl-dev:amd64 (8.12.1-3) ...
+#7 20.35 Selecting previously unselected package libexpat1-dev:amd64.
+#7 20.35 Preparing to unpack .../48-libexpat1-dev_2.6.4-1_amd64.deb ...
+#7 20.36 Unpacking libexpat1-dev:amd64 (2.6.4-1) ...
+#7 20.41 Selecting previously unselected package libfreetype-dev:amd64.
+#7 20.42 Preparing to unpack .../49-libfreetype-dev_2.13.3+dfsg-1_amd64.deb ...
+#7 20.42 Unpacking libfreetype-dev:amd64 (2.13.3+dfsg-1) ...
+#7 20.52 Selecting previously unselected package uuid-dev:amd64.
+#7 20.52 Preparing to unpack .../50-uuid-dev_2.40.4-5_amd64.deb ...
+#7 20.53 Unpacking uuid-dev:amd64 (2.40.4-5) ...
+#7 20.57 Selecting previously unselected package libfontconfig-dev:amd64.
+#7 20.57 Preparing to unpack .../51-libfontconfig-dev_2.15.0-2_amd64.deb ...
+#7 20.57 Unpacking libfontconfig-dev:amd64 (2.15.0-2) ...
+#7 20.63 Selecting previously unselected package libfontconfig1-dev:amd64.
+#7 20.63 Preparing to unpack .../52-libfontconfig1-dev_2.15.0-2_amd64.deb ...
+#7 20.63 Unpacking libfontconfig1-dev:amd64 (2.15.0-2) ...
+#7 20.67 Selecting previously unselected package libsodium23:amd64.
+#7 20.68 Preparing to unpack .../53-libsodium23_1.0.18-1+b2_amd64.deb ...
+#7 20.68 Unpacking libsodium23:amd64 (1.0.18-1+b2) ...
+#7 20.73 Selecting previously unselected package libsodium-dev:amd64.
+#7 20.73 Preparing to unpack .../54-libsodium-dev_1.0.18-1+b2_amd64.deb ...
+#7 20.74 Unpacking libsodium-dev:amd64 (1.0.18-1+b2) ...
+#7 20.80 Preparing to unpack .../55-libss2_1.47.2-1_amd64.deb ...
+#7 20.81 Unpacking libss2:amd64 (1.47.2-1) over (1.47.1-1) ...
+#7 20.86 Selecting previously unselected package libxml2:amd64.
+#7 20.86 Preparing to unpack .../56-libxml2_2.12.7+dfsg+really2.9.14-0.2+b2_amd64.deb ...
+#7 20.87 Unpacking libxml2:amd64 (2.12.7+dfsg+really2.9.14-0.2+b2) ...
+#7 20.97 Selecting previously unselected package libxml2-dev:amd64.
+#7 20.97 Preparing to unpack .../57-libxml2-dev_2.12.7+dfsg+really2.9.14-0.2+b2_amd64.deb ...
+#7 20.98 Unpacking libxml2-dev:amd64 (2.12.7+dfsg+really2.9.14-0.2+b2) ...
+#7 21.13 Preparing to unpack .../58-openssl_3.4.1-1_amd64.deb ...
+#7 21.17 Unpacking openssl (3.4.1-1) over (3.3.2-1) ...
+#7 21.88 Selecting previously unselected package pkg-config:amd64.
+#7 21.88 Preparing to unpack .../59-pkg-config_1.8.1-4_amd64.deb ...
+#7 21.88 Unpacking pkg-config:amd64 (1.8.1-4) ...
+#7 21.93 Setting up libexpat1:amd64 (2.6.4-1) ...
+#7 21.94 Setting up libgnutls-openssl27t64:amd64 (3.8.9-2) ...
+#7 21.95 Setting up libsodium23:amd64 (1.0.18-1+b2) ...
+#7 21.96 Setting up libzstd-dev:amd64 (1.5.6+dfsg-2) ...
+#7 21.97 Setting up fontconfig-config (2.15.0-2) ...
+#7 22.07 debconf: unable to initialize frontend: Dialog
+#7 22.07 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 22.07 debconf: falling back to frontend: Readline
+#7 22.09 debconf: unable to initialize frontend: Readline
+#7 22.09 debconf: (This frontend requires a controlling tty.)
+#7 22.09 debconf: falling back to frontend: Teletype
+#7 22.14 Setting up libbrotli1:amd64 (1.1.0-2+b7) ...
+#7 22.15 Setting up libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+#7 22.17 Setting up libnghttp2-14:amd64 (1.64.0-1) ...
+#7 22.18 Setting up libevent-2.1-7t64:amd64 (2.1.12-stable-10+b1) ...
+#7 22.20 Setting up libcom-err2:amd64 (1.47.2-1) ...
+#7 22.21 Setting up libpsl-dev:amd64 (0.21.2-1.1+b1) ...
+#7 22.23 Setting up libkrb5support0:amd64 (1.21.3-4) ...
+#7 22.24 Setting up libunbound8:amd64 (1.22.0-1+b1) ...
+#7 22.26 Setting up libpkgconf3:amd64 (1.8.1-4) ...
+#7 22.28 Setting up libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-3) ...
+#7 22.30 Setting up libexpat1-dev:amd64 (2.6.4-1) ...
+#7 22.31 Setting up libgnutls-dane0t64:amd64 (3.8.9-2) ...
+#7 22.33 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+#7 22.34 Setting up uuid-dev:amd64 (2.40.4-5) ...
+#7 22.36 Setting up comerr-dev:amd64 (2.1-1.47.2-1) ...
+#7 22.37 Setting up libssl-dev:amd64 (3.4.1-1) ...
+#7 22.39 Setting up libss2:amd64 (1.47.2-1) ...
+#7 22.40 Setting up pkgconf-bin (1.8.1-4) ...
+#7 22.41 Setting up libsodium-dev:amd64 (1.0.18-1+b2) ...
+#7 22.42 Setting up libk5crypto3:amd64 (1.21.3-4) ...
+#7 22.44 Setting up libidn2-dev:amd64 (2.3.7-2+b1) ...
+#7 22.45 Setting up logsave (1.47.2-1) ...
+#7 22.46 Setting up libnghttp3-9:amd64 (1.8.0-1) ...
+#7 22.47 Setting up libnghttp3-dev:amd64 (1.8.0-1) ...
+#7 22.49 Setting up mount (2.40.4-5) ...
+#7 22.50 Setting up libkrb5-3:amd64 (1.21.3-4) ...
+#7 22.52 Setting up libfontconfig1:amd64 (2.15.0-2) ...
+#7 22.53 Setting up libssh2-1t64:amd64 (1.11.1-1) ...
+#7 22.54 Setting up libtasn1-6-dev:amd64 (4.20.0-2) ...
+#7 22.55 Setting up openssl (3.4.1-1) ...
+#7 22.57 Setting up libxml2:amd64 (2.12.7+dfsg+really2.9.14-0.2+b2) ...
+#7 22.58 Setting up libldap2:amd64 (2.6.9+dfsg-1) ...
+#7 22.59 Setting up libbrotli-dev:amd64 (1.1.0-2+b7) ...
+#7 22.60 Setting up libp11-kit-dev:amd64 (0.25.5-3) ...
+#7 22.61 Setting up login (1:4.16.0-2+really2.40.4-5) ...
+#7 22.64 Setting up fontconfig (2.15.0-2) ...
+#7 22.65 Regenerating fonts cache... done.
+#7 24.71 Setting up libgmp-dev:amd64 (2:6.3.0+dfsg-3) ...
+#7 24.72 Setting up nettle-dev:amd64 (3.10.1-1) ...
+#7 24.72 Setting up e2fsprogs (1.47.2-1) ...
+#7 24.99 Setting up pkgconf:amd64 (1.8.1-4) ...
+#7 25.00 Setting up libfreetype-dev:amd64 (2.13.3+dfsg-1) ...
+#7 25.01 Setting up libxml2-dev:amd64 (2.12.7+dfsg+really2.9.14-0.2+b2) ...
+#7 25.02 Setting up libldap-dev:amd64 (2.6.9+dfsg-1) ...
+#7 25.03 Setting up libgssapi-krb5-2:amd64 (1.21.3-4) ...
+#7 25.04 Setting up pkg-config:amd64 (1.8.1-4) ...
+#7 25.05 Setting up libssh2-1-dev:amd64 (1.11.1-1) ...
+#7 25.06 Setting up libgnutls28-dev:amd64 (3.8.9-2) ...
+#7 25.08 Setting up libnghttp2-dev:amd64 (1.64.0-1) ...
+#7 25.09 Setting up libcurl4t64:amd64 (8.12.1-3) ...
+#7 25.10 Setting up libfontconfig-dev:amd64 (2.15.0-2) ...
+#7 25.11 Setting up libgssrpc4t64:amd64 (1.21.3-4) ...
+#7 25.12 Setting up librtmp-dev:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+#7 25.14 Setting up libkadm5clnt-mit12:amd64 (1.21.3-4) ...
+#7 25.15 Setting up libfontconfig1-dev:amd64 (2.15.0-2) ...
+#7 25.16 Setting up libkdb5-10t64:amd64 (1.21.3-4) ...
+#7 25.17 Setting up libkadm5srv-mit12:amd64 (1.21.3-4) ...
+#7 25.19 Setting up krb5-multidev:amd64 (1.21.3-4) ...
+#7 25.20 Setting up libkrb5-dev:amd64 (1.21.3-4) ...
+#7 25.21 Setting up libcurl4-openssl-dev:amd64 (8.12.1-3) ...
+#7 25.22 Processing triggers for libc-bin (2.40-3) ...
+#7 DONE 25.5s
+
+#8 [3/5] WORKDIR /app
+#8 DONE 0.1s
+
+#9 [4/5] COPY renv.lock /app/renv.lock
+#9 DONE 0.0s
+
+#10 [5/5] RUN R -e "install.packages('renv', repos='http://cran.rstudio.com/');           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))"
+#10 0.540 
+#10 0.540 R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+#10 0.540 Copyright (C) 2024 The R Foundation for Statistical Computing
+#10 0.540 Platform: x86_64-pc-linux-gnu
+#10 0.540 
+#10 0.540 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#10 0.540 You are welcome to redistribute it under certain conditions.
+#10 0.540 Type 'license()' or 'licence()' for distribution details.
+#10 0.540 
+#10 0.540   Natural language support but running in an English locale
+#10 0.540 
+#10 0.540 R is a collaborative project with many contributors.
+#10 0.540 Type 'contributors()' for more information and
+#10 0.540 'citation()' on how to cite R or R packages in publications.
+#10 0.540 
+#10 0.540 Type 'demo()' for some demos, 'help()' for on-line help, or
+#10 0.540 'help.start()' for an HTML browser interface to help.
+#10 0.540 Type 'q()' to quit R.
+#10 0.540 
+#10 0.691 > install.packages('renv', repos='http://cran.rstudio.com/');           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))
+#10 0.695 Installing package into ‘/usr/local/lib/R/site-library’
+#10 0.695 (as ‘lib’ is unspecified)
+#10 1.685 trying URL 'http://cran.rstudio.com/src/contrib/renv_1.1.2.tar.gz'
+#10 2.592 Content type 'application/x-gzip' length 1263920 bytes (1.2 MB)
+#10 2.592 ==================================================
+#10 2.658 downloaded 1.2 MB
+#10 2.658 
+#10 3.654 * installing *source* package ‘renv’ ...
+#10 3.691 ** package ‘renv’ successfully unpacked and MD5 sums checked
+#10 3.691 ** using staged installation
+#10 3.736 ** R
+#10 4.001 ** inst
+#10 4.024 ** byte-compile and prepare package for lazy loading
+#10 18.38 ** libs
+#10 18.38 using C compiler: ‘gcc (Debian 14.2.0-6) 14.2.0’
+#10 18.38 gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.4.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c renv.c -o renv.o
+#10 18.38 gcc -shared -L/usr/lib/R/lib -Wl,-z,relro -o renv.so renv.o -L/usr/lib/R/lib -lR
+#10 18.38 ** help
+#10 18.55 *** installing help indices
+#10 18.71 *** copying figures
+#10 18.71 ** building package indices
+#10 19.15 ** installing vignettes
+#10 19.17 ** testing if installed package can be loaded from temporary location
+#10 19.61 ** checking absolute paths in shared objects and dynamic libraries
+#10 19.63 ** testing if installed package can be loaded from final location
+#10 20.36 ** testing if installed package keeps a record of temporary installation path
+#10 20.37 * DONE (renv)
+#10 20.39 
+#10 20.39 The downloaded source packages are in
+#10 20.39 	‘/tmp/Rtmphux05h/downloaded_packages’
+#10 20.91 The following package(s) will be updated:
+#10 20.91 
+#10 20.91 # CRAN -----------------------------------------------------------------------
+#10 20.91 - MASS            [7.3-61 -> 7.3-60.2]
+#10 20.91 - nlme            [3.1-166 -> 3.1-164]
+#10 20.91 - renv            [1.1.2 -> 1.0.11]
+#10 20.91 - askpass         [* -> 1.2.1]
+#10 20.91 - backports       [* -> 1.5.0]
+#10 20.91 - base64enc       [* -> 0.1-3]
+#10 20.91 - bit             [* -> 4.6.0]
+#10 20.91 - bit64           [* -> 4.6.0-1]
+#10 20.91 - blob            [* -> 1.2.4]
+#10 20.91 - broom           [* -> 1.0.7]
+#10 20.91 - bslib           [* -> 0.9.0]
+#10 20.91 - cachem          [* -> 1.1.0]
+#10 20.91 - callr           [* -> 3.7.6]
+#10 20.91 - cellranger      [* -> 1.1.0]
+#10 20.91 - cli             [* -> 3.6.4]
+#10 20.91 - clipr           [* -> 0.8.0]
+#10 20.91 - colorspace      [* -> 2.1-1]
+#10 20.91 - conflicted      [* -> 1.2.0]
+#10 20.91 - cpp11           [* -> 0.5.2]
+#10 20.91 - crayon          [* -> 1.5.3]
+#10 20.91 - curl            [* -> 6.2.1]
+#10 20.91 - data.table      [* -> 1.17.0]
+#10 20.91 - DBI             [* -> 1.2.3]
+#10 20.91 - dbplyr          [* -> 2.5.0]
+#10 20.91 - digest          [* -> 0.6.37]
+#10 20.91 - dplyr           [* -> 1.1.4]
+#10 20.91 - dtplyr          [* -> 1.3.1]
+#10 20.91 - evaluate        [* -> 1.0.3]
+#10 20.91 - fansi           [* -> 1.0.6]
+#10 20.91 - farver          [* -> 2.1.2]
+#10 20.91 - fastmap         [* -> 1.2.0]
+#10 20.91 - fontawesome     [* -> 0.5.3]
+#10 20.91 - forcats         [* -> 1.0.0]
+#10 20.91 - fs              [* -> 1.6.5]
+#10 20.91 - gargle          [* -> 1.5.2]
+#10 20.91 - generics        [* -> 0.1.3]
+#10 20.91 - ggplot2         [* -> 3.5.1]
+#10 20.91 - glue            [* -> 1.8.0]
+#10 20.91 - googledrive     [* -> 2.1.1]
+#10 20.91 - googlesheets4   [* -> 1.1.1]
+#10 20.91 - gtable          [* -> 0.3.6]
+#10 20.91 - haven           [* -> 2.5.4]
+#10 20.91 - highr           [* -> 0.11]
+#10 20.91 - hms             [* -> 1.1.3]
+#10 20.91 - htmltools       [* -> 0.5.8.1]
+#10 20.91 - httpuv          [* -> 1.6.15]
+#10 20.91 - httr            [* -> 1.4.7]
+#10 20.91 - ids             [* -> 1.0.1]
+#10 20.91 - isoband         [* -> 0.2.7]
+#10 20.91 - jquerylib       [* -> 0.1.4]
+#10 20.91 - jsonlite        [* -> 1.9.1]
+#10 20.91 - knitr           [* -> 1.49]
+#10 20.91 - labeling        [* -> 0.4.3]
+#10 20.91 - later           [* -> 1.4.1]
+#10 20.91 - lifecycle       [* -> 1.0.4]
+#10 20.91 - logger          [* -> 0.4.0]
+#10 20.91 - lubridate       [* -> 1.9.4]
+#10 20.91 - magrittr        [* -> 2.0.3]
+#10 20.91 - memoise         [* -> 2.0.1]
+#10 20.91 - mime            [* -> 0.12]
+#10 20.91 - modelr          [* -> 0.1.11]
+#10 20.91 - munsell         [* -> 0.5.1]
+#10 20.91 - openssl         [* -> 2.3.2]
+#10 20.91 - pillar          [* -> 1.10.1]
+#10 20.91 - pkgconfig       [* -> 2.0.3]
+#10 20.91 - plumber         [* -> 1.3.0]
+#10 20.91 - prettyunits     [* -> 1.2.0]
+#10 20.91 - processx        [* -> 3.8.6]
+#10 20.91 - progress        [* -> 1.2.3]
+#10 20.91 - promises        [* -> 1.3.2]
+#10 20.91 - ps              [* -> 1.9.0]
+#10 20.91 - purrr           [* -> 1.0.4]
+#10 20.91 - R6              [* -> 2.6.1]
+#10 20.91 - ragg            [* -> 1.3.3]
+#10 20.91 - randomForest    [* -> 4.7-1.2]
+#10 20.91 - rappdirs        [* -> 0.3.3]
+#10 20.91 - RColorBrewer    [* -> 1.1-3]
+#10 20.91 - Rcpp            [* -> 1.0.14]
+#10 20.91 - readr           [* -> 2.1.5]
+#10 20.91 - readxl          [* -> 1.4.5]
+#10 20.91 - rematch         [* -> 2.0.0]
+#10 20.91 - rematch2        [* -> 2.1.2]
+#10 20.91 - reprex          [* -> 2.1.1]
+#10 20.91 - rlang           [* -> 1.1.5]
+#10 20.91 - rmarkdown       [* -> 2.29]
+#10 20.91 - rstudioapi      [* -> 0.17.1]
+#10 20.91 - rvest           [* -> 1.0.4]
+#10 20.91 - sass            [* -> 0.4.9]
+#10 20.91 - scales          [* -> 1.3.0]
+#10 20.91 - selectr         [* -> 0.4-2]
+#10 20.91 - sodium          [* -> 1.4.0]
+#10 20.91 - stringi         [* -> 1.8.4]
+#10 20.91 - stringr         [* -> 1.5.1]
+#10 20.91 - swagger         [* -> 5.17.14.1]
+#10 20.91 - sys             [* -> 3.4.3]
+#10 20.91 - systemfonts     [* -> 1.2.1]
+#10 20.91 - textshaping     [* -> 1.0.0]
+#10 20.91 - tibble          [* -> 3.2.1]
+#10 20.91 - tidyr           [* -> 1.3.1]
+#10 20.91 - tidyselect      [* -> 1.2.1]
+#10 20.91 - tidyverse       [* -> 2.0.0]
+#10 20.91 - timechange      [* -> 0.3.0]
+#10 20.91 - tinytex         [* -> 0.56]
+#10 20.91 - tzdb            [* -> 0.4.0]
+#10 20.91 - utf8            [* -> 1.2.4]
+#10 20.91 - uuid            [* -> 1.2-1]
+#10 20.91 - vctrs           [* -> 0.6.5]
+#10 20.91 - viridisLite     [* -> 0.4.2]
+#10 20.91 - vroom           [* -> 1.6.5]
+#10 20.91 - webutils        [* -> 1.2.2]
+#10 20.91 - withr           [* -> 3.0.2]
+#10 20.91 - xfun            [* -> 0.51]
+#10 20.91 - xml2            [* -> 1.3.7]
+#10 20.91 - yaml            [* -> 2.3.10]
+#10 20.91 
+#10 20.94 # Downloading packages -------------------------------------------------------
+#10 21.31 - Querying repositories for available source packages ... Done!
+#10 24.22 - Downloading renv from CRAN ...                OK [1.2 Mb in 0.84s]
+#10 25.14 - Downloading nlme from CRAN ...                OK [817.2 Kb in 0.63s]
+#10 25.86 - Downloading MASS from CRAN ...                OK [499.9 Kb in 0.9s]
+#10 26.86 - Downloading DBI from CRAN ...                 OK [1.1 Mb in 1.1s]
+#10 28.09 - Downloading R6 from CRAN ...                  OK [63 Kb in 0.71s]
+#10 28.84 - Downloading RColorBrewer from CRAN ...        OK [11.4 Kb in 0.81s]
+#10 29.68 - Downloading Rcpp from CRAN ...                OK [2.9 Mb in 1.0s]
+#10 30.83 - Downloading askpass from CRAN ...             OK [5.9 Kb in 0.81s]
+#10 31.70 - Downloading sys from CRAN ...                 OK [19.5 Kb in 0.81s]
+#10 32.55 - Downloading backports from CRAN ...           OK [30 Kb in 0.81s]
+#10 33.40 - Downloading base64enc from CRAN ...           OK [7.6 Kb in 0.81s]
+#10 34.25 - Downloading bit from CRAN ...                 OK [297.4 Kb in 0.82s]
+#10 35.11 - Downloading bit64 from CRAN ...               OK [138.7 Kb in 0.61s]
+#10 35.79 - Downloading blob from CRAN ...                OK [10.4 Kb in 0.81s]
+#10 36.68 - Downloading rlang from CRAN ...               OK [748.3 Kb in 1.0s]
+#10 37.84 - Downloading vctrs from CRAN ...               OK [946.4 Kb in 0.91s]
+#10 38.89 - Downloading cli from CRAN ...                 OK [622.6 Kb in 0.66s]
+#10 39.77 - Downloading glue from CRAN ...                OK [123.7 Kb in 0.81s]
+#10 40.68 - Downloading lifecycle from CRAN ...           OK [105.1 Kb in 0.81s]
+#10 41.52 - Downloading broom from CRAN ...               OK [629.3 Kb in 0.82s]
+#10 42.43 - Downloading dplyr from CRAN ...               OK [1.2 Mb in 0.93s]
+#10 43.47 - Downloading generics from CRAN ...            OK [168.2 Kb in 0.91s]
+#10 44.46 - Downloading magrittr from CRAN ...            OK [260.8 Kb in 0.82s]
+#10 45.37 - Downloading pillar from CRAN ...              OK [397.5 Kb in 0.66s]
+#10 46.17 - Downloading utf8 from CRAN ...                OK [235.4 Kb in 0.81s]
+#10 47.07 - Downloading tibble from CRAN ...              OK [552.7 Kb in 1.1s]
+#10 48.30 - Downloading fansi from CRAN ...               OK [471.2 Kb in 1.0s]
+#10 49.50 - Downloading pkgconfig from CRAN ...           OK [5.9 Kb in 0.81s]
+#10 50.40 - Downloading tidyselect from CRAN ...          OK [101.2 Kb in 0.81s]
+#10 51.31 - Downloading withr from CRAN ...               OK [100.8 Kb in 0.61s]
+#10 51.99 - Downloading purrr from CRAN ...               OK [250.9 Kb in 0.65s]
+#10 52.71 - Downloading stringr from CRAN ...             OK [172.5 Kb in 0.63s]
+#10 53.43 - Downloading stringi from CRAN ...             OK [11.4 Mb in 1.8s]
+#10 55.70 - Downloading tidyr from CRAN ...               OK [790.1 Kb in 1.0s]
+#10 56.83 - Downloading cpp11 from CRAN ...               OK [285.1 Kb in 0.99s]
+#10 57.87 - Downloading bslib from CRAN ...               OK [5.2 Mb in 1.2s]
+#10 59.30 - Downloading cachem from CRAN ...              OK [26.6 Kb in 0.81s]
+#10 60.19 - Downloading fastmap from CRAN ...             OK [45.6 Kb in 0.81s]
+#10 61.05 - Downloading htmltools from CRAN ...           OK [132 Kb in 0.91s]
+#10 62.05 - Downloading digest from CRAN ...              OK [226.9 Kb in 0.82s]
+#10 62.97 - Downloading jquerylib from CRAN ...           OK [508 Kb in 0.84s]
+#10 63.89 - Downloading jsonlite from CRAN ...            OK [1 Mb in 1.0s]
+#10 65.02 - Downloading memoise from CRAN ...             OK [17.4 Kb in 0.81s]
+#10 65.87 - Downloading mime from CRAN ...                OK [12.3 Kb in 0.81s]
+#10 66.74 - Downloading sass from CRAN ...                OK [2.9 Mb in 1.2s]
+#10 68.20 - Downloading fs from CRAN ...                  OK [1.1 Mb in 0.74s]
+#10 69.10 - Downloading rappdirs from CRAN ...            OK [12 Kb in 0.82s]
+#10 69.95 - Downloading callr from CRAN ...               OK [101.9 Kb in 0.81s]
+#10 70.81 - Downloading processx from CRAN ...            OK [161.3 Kb in 0.61s]
+#10 71.50 - Downloading ps from CRAN ...                  OK [163.7 Kb in 0.61s]
+#10 72.16 - Downloading cellranger from CRAN ...          OK [62.4 Kb in 0.81s]
+#10 73.01 - Downloading rematch from CRAN ...             OK [4.7 Kb in 0.61s]
+#10 73.65 - Downloading clipr from CRAN ...               OK [21.4 Kb in 0.91s]
+#10 74.60 - Downloading colorspace from CRAN ...          OK [2 Mb in 0.71s]
+#10 75.43 - Downloading conflicted from CRAN ...          OK [16.7 Kb in 0.81s]
+#10 76.27 - Downloading crayon from CRAN ...              OK [39.4 Kb in 0.81s]
+#10 77.12 - Downloading curl from CRAN ...                OK [911.7 Kb in 0.93s]
+#10 78.11 - Downloading data.table from CRAN ...          OK [5.6 Mb in 1.2s]
+#10 79.73 - Downloading dbplyr from CRAN ...              OK [752.6 Kb in 0.89s]
+#10 80.73 - Downloading dtplyr from CRAN ...              OK [147.4 Kb in 0.81s]
+#10 81.61 - Downloading evaluate from CRAN ...            OK [36.9 Kb in 0.81s]
+#10 82.46 - Downloading farver from CRAN ...              OK [1.2 Mb in 0.99s]
+#10 83.54 - Downloading fontawesome from CRAN ...         OK [1.3 Mb in 0.94s]
+#10 84.55 - Downloading forcats from CRAN ...             OK [287.3 Kb in 0.62s]
+#10 85.23 - Downloading gargle from CRAN ...              OK [612.9 Kb in 0.83s]
+#10 86.15 - Downloading httr from CRAN ...                OK [115.7 Kb in 0.81s]
+#10 87.07 - Downloading openssl from CRAN ...             OK [1.1 Mb in 0.65s]
+#10 87.80 - Downloading ggplot2 from CRAN ...             OK [3.4 Mb in 1.0s]
+#10 89.05 - Downloading gtable from CRAN ...              OK [144.7 Kb in 0.91s]
+#10 90.06 - Downloading isoband from CRAN ...             OK [1.5 Mb in 0.74s]
+#10 90.93 - Downloading scales from CRAN ...              OK [295.5 Kb in 0.92s]
+#10 91.94 - Downloading labeling from CRAN ...            OK [9.9 Kb in 0.81s]
+#10 92.84 - Downloading munsell from CRAN ...             OK [178 Kb in 0.62s]
+#10 93.55 - Downloading viridisLite from CRAN ...         OK [1.2 Mb in 0.98s]
+#10 94.60 - Downloading googledrive from CRAN ...         OK [1.5 Mb in 0.86s]
+#10 95.58 - Downloading uuid from CRAN ...                OK [78.8 Kb in 0.61s]
+#10 96.23 - Downloading googlesheets4 from CRAN ...       OK [227.1 Kb in 0.61s]
+#10 96.95 - Downloading ids from CRAN ...                 OK [89.1 Kb in 0.81s]
+#10 97.82 - Downloading rematch2 from CRAN ...            OK [13.1 Kb in 0.81s]
+#10 98.68 - Downloading haven from CRAN ...               OK [306 Kb in 0.86s]
+#10 99.72 - Downloading hms from CRAN ...                 OK [42.4 Kb in 0.71s]
+#10 100.5 - Downloading readr from CRAN ...               OK [291.1 Kb in 0.82s]
+#10 101.5 - Downloading vroom from CRAN ...               OK [732.8 Kb in 0.71s]
+#10 102.5 - Downloading tzdb from CRAN ...                OK [572.6 Kb in 0.84s]
+#10 103.6 - Downloading progress from CRAN ...            OK [29.8 Kb in 1.3s]
+#10 105.0 - Downloading prettyunits from CRAN ...         OK [95.2 Kb in 0.62s]
+#10 105.8 - Downloading highr from CRAN ...               OK [13.5 Kb in 1.1s]
+#10 107.0 - Downloading xfun from CRAN ...                OK [171.7 Kb in 0.82s]
+#10 107.9 - Downloading httpuv from CRAN ...              OK [1.8 Mb in 0.72s]
+#10 108.8 - Downloading later from CRAN ...               OK [68.2 Kb in 0.61s]
+#10 109.7 - Downloading promises from CRAN ...            OK [3 Mb in 1.1s]
+#10 111.0 - Downloading knitr from CRAN ...               OK [533 Kb in 0.87s]
+#10 111.9 - Downloading yaml from CRAN ...                OK [92.3 Kb in 0.81s]
+#10 112.8 - Downloading logger from CRAN ...              OK [664.8 Kb in 0.83s]
+#10 113.7 - Downloading lubridate from CRAN ...           OK [419.3 Kb in 0.84s]
+#10 114.6 - Downloading timechange from CRAN ...          OK [101 Kb in 0.92s]
+#10 115.6 - Downloading modelr from CRAN ...              OK [118.6 Kb in 0.91s]
+#10 116.6 - Downloading plumber from CRAN ...             OK [831.4 Kb in 0.87s]
+#10 117.6 - Downloading webutils from CRAN ...            OK [22.9 Kb in 0.81s]
+#10 118.5 - Downloading sodium from CRAN ...              OK [456.6 Kb in 0.98s]
+#10 119.7 - Downloading swagger from CRAN ...             OK [1.9 Mb in 1.9s]
+#10 121.7 - Downloading ragg from CRAN ...                OK [418.9 Kb in 0.78s]
+#10 122.6 - Downloading systemfonts from CRAN ...         OK [99.4 Kb in 0.81s]
+#10 123.6 - Downloading textshaping from CRAN ...         OK [73.7 Kb in 0.91s]
+#10 124.5 - Downloading randomForest from CRAN ...        OK [80.1 Kb in 0.61s]
+#10 125.2 - Downloading readxl from CRAN ...              OK [1.6 Mb in 1.0s]
+#10 126.3 - Downloading reprex from CRAN ...              OK [1 Mb in 1.2s]
+#10 127.7 - Downloading rmarkdown from CRAN ...           OK [2.1 Mb in 1.3s]
+#10 129.3 - Downloading tinytex from CRAN ...             OK [35.1 Kb in 0.81s]
+#10 130.3 - Downloading rstudioapi from CRAN ...          OK [115.7 Kb in 0.92s]
+#10 131.2 - Downloading rvest from CRAN ...               OK [113.2 Kb in 0.81s]
+#10 132.2 - Downloading selectr from CRAN ...             OK [40.4 Kb in 0.81s]
+#10 133.0 - Downloading xml2 from CRAN ...                OK [149.1 Kb in 0.61s]
+#10 133.7 - Downloading tidyverse from CRAN ...           OK [688.1 Kb in 0.96s]
+#10 134.7 Successfully downloaded 114 packages in 110 seconds.
+#10 134.7 
+#10 134.7 # Installing packages --------------------------------------------------------
+#10 134.8 - Installing renv ...                           OK [built from source and cached in 15s]
+#10 149.6 - Installing nlme ...                           OK [built from source and cached in 20s]
+#10 169.7 - Installing MASS ...                           OK [built from source and cached in 8.0s]
+#10 177.8 - Installing DBI ...                            OK [built from source and cached in 4.6s]
+#10 182.3 - Installing R6 ...                             OK [built from source and cached in 1.6s]
+#10 184.0 - Installing RColorBrewer ...                   OK [built from source and cached in 2.5s]
+#10 186.7 - Installing Rcpp ...                           OK [built from source and cached in 32s]
+#10 218.4 - Installing sys ...                            OK [built from source and cached in 1.7s]
+#10 220.2 - Installing askpass ...                        OK [built from source and cached in 1.4s]
+#10 221.6 - Installing backports ...                      OK [built from source and cached in 2.0s]
+#10 223.7 - Installing base64enc ...                      OK [built from source and cached in 1.6s]
+#10 225.3 - Installing bit ...                            OK [built from source and cached in 12s]
+#10 237.1 - Installing bit64 ...                          OK [built from source and cached in 14s]
+#10 250.9 - Installing rlang ...                          OK [built from source and cached in 23s]
+#10 273.6 - Installing cli ...                            OK [built from source and cached in 17s]
+#10 290.5 - Installing glue ...                           OK [built from source and cached in 2.2s]
+#10 292.7 - Installing lifecycle ...                      OK [built from source and cached in 2.2s]
+#10 295.0 - Installing vctrs ...                          OK [built from source and cached in 24s]
+#10 319.5 - Installing blob ...                           OK [built from source and cached in 2.2s]
+#10 321.7 - Installing generics ...                       OK [built from source and cached in 1.8s]
+#10 323.6 - Installing magrittr ...                       OK [built from source and cached in 1.7s]
+#10 325.3 - Installing utf8 ...                           OK [built from source and cached in 4.7s]
+#10 330.1 - Installing pillar ...                         OK [built from source and cached in 4.1s]
+#10 334.3 - Installing fansi ...                          OK [built from source and cached in 5.1s]
+#10 339.4 - Installing pkgconfig ...                      OK [built from source and cached in 1.2s]
+#10 340.7 - Installing tibble ...                         OK [built from source and cached in 4.0s]
+#10 344.6 - Installing withr ...                          OK [built from source and cached in 1.9s]
+#10 346.6 - Installing tidyselect ...                     OK [built from source and cached in 2.8s]
+#10 349.5 - Installing dplyr ...                          OK [built from source and cached in 13s]
+#10 362.2 - Installing purrr ...                          OK [built from source and cached in 5.8s]
+#10 368.5 - Installing stringi ...                        OK [built from source and cached in 1.4m]
+#10 453.0 - Installing stringr ...                        OK [built from source and cached in 2.7s]
+#10 455.8 - Installing cpp11 ...                          OK [built from source and cached in 1.5s]
+#10 457.4 - Installing tidyr ...                          OK [built from source and cached in 10s]
+#10 467.5 - Installing broom ...                          OK [built from source and cached in 7.4s]
+#10 474.9 - Installing fastmap ...                        OK [built from source and cached in 3.6s]
+#10 478.5 - Installing cachem ...                         OK [built from source and cached in 2.1s]
+#10 480.7 - Installing digest ...                         OK [built from source and cached in 8.3s]
+#10 489.0 - Installing htmltools ...                      OK [built from source and cached in 4.1s]
+#10 493.1 - Installing jquerylib ...                      OK [built from source and cached in 1.5s]
+#10 494.7 - Installing jsonlite ...                       OK [built from source and cached in 4.7s]
+#10 499.4 - Installing memoise ...                        OK [built from source and cached in 1.7s]
+#10 501.1 - Installing mime ...                           OK [built from source and cached in 1.6s]
+#10 502.8 - Installing fs ...                             OK [built from source and cached in 27s]
+#10 529.8 - Installing rappdirs ...                       OK [built from source and cached in 1.4s]
+#10 531.3 - Installing sass ...                           OK [built from source and cached in 2.1m]
+#10 654.6 - Installing bslib ...                          OK [built from source and cached in 5.2s]
+#10 659.9 - Installing ps ...                             OK [built from source and cached in 6.1s]
+#10 666.1 - Installing processx ...                       OK [built from source and cached in 6.4s]
+#10 672.6 - Installing callr ...                          OK [built from source and cached in 5.0s]
+#10 677.6 - Installing rematch ...                        OK [built from source and cached in 1.2s]
+#10 678.9 - Installing cellranger ...                     OK [built from source and cached in 1.9s]
+#10 680.8 - Installing clipr ...                          OK [built from source and cached in 1.2s]
+#10 682.2 - Installing colorspace ...                     OK [built from source and cached in 6.8s]
+#10 688.9 - Installing conflicted ...                     OK [built from source and cached in 2.1s]
+#10 691.0 - Installing crayon ...                         OK [built from source and cached in 2.3s]
+#10 693.4 - Installing curl ...                           OK [built from source and cached in 4.8s]
+#10 698.4 - Installing data.table ...                     OK [built from source and cached in 27s]
+#10 725.2 - Installing dbplyr ...                         OK [built from source and cached in 13s]
+#10 738.3 - Installing dtplyr ...                         OK [built from source and cached in 4.0s]
+#10 742.3 - Installing evaluate ...                       OK [built from source and cached in 1.7s]
+#10 744.1 - Installing farver ...                         OK [built from source and cached in 27s]
+#10 771.2 - Installing fontawesome ...                    OK [built from source and cached in 2.1s]
+#10 773.3 - Installing forcats ...                        OK [built from source and cached in 2.5s]
+#10 775.9 - Installing openssl ...                        OK [built from source and cached in 6.9s]
+#10 782.8 - Installing httr ...                           OK [built from source and cached in 4.8s]
+#10 787.7 - Installing gargle ...                         OK [built from source and cached in 5.3s]
+#10 793.0 - Installing gtable ...                         OK [built from source and cached in 2.5s]
+#10 795.6 - Installing isoband ...                        OK [built from source and cached in 5.5s]
+#10 801.2 - Installing labeling ...                       OK [built from source and cached in 1.5s]
+#10 802.7 - Installing munsell ...                        OK [built from source and cached in 1.7s]
+#10 804.5 - Installing viridisLite ...                    OK [built from source and cached in 1.3s]
+#10 805.8 - Installing scales ...                         OK [built from source and cached in 4.9s]
+#10 811.0 - Installing ggplot2 ...                        OK [built from source and cached in 18s]
+#10 828.8 - Installing uuid ...                           OK [built from source and cached in 5.0s]
+#10 833.8 - Installing googledrive ...                    OK [built from source and cached in 4.1s]
+#10 838.0 - Installing ids ...                            OK [built from source and cached in 1.3s]
+#10 839.3 - Installing rematch2 ...                       OK [built from source and cached in 2.1s]
+#10 841.4 - Installing googlesheets4 ...                  OK [built from source and cached in 4.8s]
+#10 846.3 - Installing hms ...                            OK [built from source and cached in 3.0s]
+#10 849.3 - Installing tzdb ...                           OK [built from source and cached in 14s]
+#10 863.6 - Installing prettyunits ...                    OK [built from source and cached in 2.2s]
+#10 865.9 - Installing progress ...                       OK [built from source and cached in 3.0s]
+#10 869.0 - Installing vroom ...                          OK [built from source and cached in 1.5m]
+#10 956.8 - Installing readr ...                          OK [built from source and cached in 43s]
+#10 999.9 - Installing haven ...                          OK [built from source and cached in 20s]
+#10 1020.4 - Installing xfun ...                           OK [built from source and cached in 4.6s]
+#10 1025.0 - Installing highr ...                          OK [built from source and cached in 1.3s]
+#10 1026.3 - Installing later ...                          OK [built from source and cached in 19s]
+#10 1045.9 - Installing promises ...                       OK [built from source and cached in 8.6s]
+#10 1054.6 - Installing httpuv ...                         OK [built from source and cached in 1.6m]
+#10 1151.3 - Installing yaml ...                           OK [built from source and cached in 6.2s]
+#10 1157.6 - Installing knitr ...                          OK [built from source and cached in 6.3s]
+#10 1164.0 - Installing logger ...                         OK [built from source and cached in 2.2s]
+#10 1166.3 - Installing timechange ...                     OK [built from source and cached in 20s]
+#10 1186.5 - Installing lubridate ...                      OK [built from source and cached in 7.5s]
+#10 1194.1 - Installing modelr ...                         OK [built from source and cached in 2.7s]
+#10 1196.8 - Installing webutils ...                       OK [built from source and cached in 1.8s]
+#10 1198.7 - Installing sodium ...                         OK [built from source and cached in 2.6s]
+#10 1201.4 - Installing swagger ...                        OK [built from source and cached in 1.4s]
+#10 1202.8 - Installing plumber ...                        OK [built from source and cached in 8.5s]
+#10 1211.3 - Installing systemfonts ...                    OK [built from source and cached in 32s]
+#10 1243.2 - Installing textshaping ...                    FAILED
+#10 1243.8 Error: Error installing package 'textshaping':
+#10 1243.8 =======================================
+#10 1243.8 
+#10 1243.8 * installing *source* package ‘textshaping’ ...
+#10 1243.8 ** package ‘textshaping’ successfully unpacked and MD5 sums checked
+#10 1243.8 ** using non-staged installation
+#10 1243.8 Package harfbuzz was not found in the pkg-config search path.
+#10 1243.8 Perhaps you should add the directory containing `harfbuzz.pc'
+#10 1243.8 to the PKG_CONFIG_PATH environment variable
+#10 1243.8 Package 'harfbuzz', required by 'virtual:world', not found
+#10 1243.8 Package 'fribidi', required by 'virtual:world', not found
+#10 1243.8 Using PKG_CFLAGS=-I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/include/fribidi
+#10 1243.8 Using PKG_LIBS=-lfreetype -lharfbuzz -lfribidi -lpng
+#10 1243.8 --------------------------- [ANTICONF] --------------------------------
+#10 1243.8 Configuration failed to find the harfbuzz freetype2 fribidi library. Try installing:
+#10 1243.8  * deb: libharfbuzz-dev libfribidi-dev (Debian, Ubuntu, etc)
+#10 1243.8  * rpm: harfbuzz-devel fribidi-devel (Fedora, EPEL)
+#10 1243.8  * brew: harfbuzz fribidi (OSX)
+#10 1243.8 If harfbuzz freetype2 fribidi is already installed, check that 'pkg-config' is in your
+#10 1243.8 PATH and PKG_CONFIG_PATH contains a harfbuzz freetype2 fribidi.pc file. If pkg-config
+#10 1243.8 is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+#10 1243.8 R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+#10 1243.8 -------------------------- [ERROR MESSAGE] ---------------------------
+#10 1243.8 <stdin>:1:10: fatal error: hb-ft.h: No such file or directory
+#10 1243.8 compilation terminated.
+#10 1243.8 --------------------------------------------------------------------
+#10 1243.8 ERROR: configuration failed for package ‘textshaping’
+#10 1243.8 * removing ‘/usr/local/lib/R/site-library/.renv/1/textshaping’
+#10 1243.8 install of package 'textshaping' failed [error code 1]
+#10 1243.8 Traceback (most recent calls last):
+#10 1243.8 13: renv::restore(repos = c(CRAN = "http://cran.rstudio.com/"))
+#10 1243.8 12: renv_restore_run_actions(project, diff, current, lockfile, rebuild)
+#10 1243.8 11: renv_install_impl(records)
+#10 1243.8 10: renv_install_staged(records)
+#10 1243.8  9: renv_install_default(records)
+#10 1243.8  8: handler(package, renv_install_package(record))
+#10 1243.8  7: renv_install_package(record)
+#10 1243.8  6: withCallingHandlers(renv_install_package_impl(record), error = function(e) writef("FAILED"))
+#10 1243.8  5: renv_install_package_impl(record)
+#10 1243.8  4: r_cmd_install(package, path)
+#10 1243.8  3: r_exec_error(package, output, "install", status)
+#10 1243.8  2: abort(all)
+#10 1243.8  1: stop(fallback)
+#10 1244.1 Execution halted
+#10 ERROR: process "/bin/sh -c R -e \"install.packages('renv', repos='http://cran.rstudio.com/');           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))\"" did not complete successfully: exit code: 1
+------
+ > [5/5] RUN R -e "install.packages('renv', repos='http://cran.rstudio.com/');           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))":
+1243.8  9: renv_install_default(records)
+1243.8  8: handler(package, renv_install_package(record))
+1243.8  7: renv_install_package(record)
+1243.8  6: withCallingHandlers(renv_install_package_impl(record), error = function(e) writef("FAILED"))
+1243.8  5: renv_install_package_impl(record)
+1243.8  4: r_cmd_install(package, path)
+1243.8  3: r_exec_error(package, output, "install", status)
+1243.8  2: abort(all)
+1243.8  1: stop(fallback)
+1244.1 Execution halted
+------
+Dockerfile.base:23
+--------------------
+  22 |     # Install renv and restore packages using renv.lock
+  23 | >>> RUN R -e "install.packages('renv', repos='http://cran.rstudio.com/'); \
+  24 | >>>           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))"
+  25 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c R -e \"install.packages('renv', repos='http://cran.rstudio.com/');           renv::restore(repos = c(CRAN = 'http://cran.rstudio.com/'))\"" did not complete successfully: exit code: 1
