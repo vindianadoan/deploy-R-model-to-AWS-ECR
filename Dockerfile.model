@@ -1,0 +1,21 @@
+# Use the prebuilt base image that contains R 4.4.1 and all system dependencies & renv packages
+FROM r-base-mlops:4.4.1
+
+# Set the working directory
+WORKDIR /app
+
+# (Optional) Create directories for logs if your model/Plumber API writes to them
+RUN mkdir -p /app/logs/docker_logs /app/logs/R_logs /app/logs/aws_logs
+
+# Copy your model scripts into the container
+COPY train.R /app/train.R
+COPY serve.R /app/serve.R
+
+# Run the training script to generate or update your model (e.g. model.rds)
+RUN Rscript train.R
+
+# Expose the port on which your Plumber API will run
+EXPOSE 8080
+
+# Start the Plumber API when the container runs
+CMD ["R", "-e", "pr <- plumber::plumb('serve.R'); pr$run(host='0.0.0.0', port=8080)"]

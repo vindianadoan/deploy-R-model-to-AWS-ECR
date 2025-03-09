@@ -19,7 +19,7 @@ echo "Building starting. Build log will be saved to $log_file"
 
 # Check the argument to determine which Docker build command to use
 if [ "$container_type" = "model" ]; then
-    docker build --no-cache -t my-r-sagemaker-model . > "$log_file" 2>&1
+    docker build --no-cache -f Dockerfile.model -t my-r-sagemaker-model . > "$log_file" 2>&1
 elif [ "$container_type" = "base" ]; then
     docker build --no-cache -f Dockerfile.base -t r-base-mlops:4.4.1 . > "$log_file" 2>&1
 else
