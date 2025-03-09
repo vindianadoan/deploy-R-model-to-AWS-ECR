@@ -4,7 +4,7 @@ library(logger)
 
 # Create a timestamp for the log file name
 timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-log_file <- paste0("outside_container_logs/R_logs/",timestamp,"training_.log")
+log_file <- paste0("outside_container_logs/R_logs/",timestamp,"_training.log")
 
 # Configure logger with a unique file name for each run
 log_appender(appender_file(log_file))
