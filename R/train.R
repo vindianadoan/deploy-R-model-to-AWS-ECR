@@ -23,5 +23,5 @@ model_output <- capture.output(print(model))
 log_info("Model details:\n{paste(model_output, collapse = '\n')}")
 
 # Save the trained model to disk
-saveRDS(model, file = "model.rds")
+saveRDS(model, file = "data/model.rds")
 log_info("Model saved to model.rds.")
