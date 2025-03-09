@@ -9,9 +9,10 @@ model <- readRDS("model.rds")
 #* @post /predict
 #* @param data:json
 #* @json
-function(data) {
+function(req) {
   # Convert the incoming JSON (a list) to a data.frame.
   # It’s assumed that the JSON keys match the column names (except the target) used during training.
+  data <- jsonlite::fromJSON(req$postBody)
   input_data <- as.data.frame(data)
   
   # Perform prediction using the loaded model
