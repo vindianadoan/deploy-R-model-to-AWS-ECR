@@ -1,0 +1,3 @@
+INFO [2025-03-10 01:26:14] Incoming request: POST /predict
+INFO [2025-03-10 01:26:14] Request body: {"Sepal.Length": 5.1, "Sepal.Width": 3.5, "Petal.Length": 1.4, "Petal.Width": 0.2}
+INFO [2025-03-10 01:26:14] Prediction: setosa

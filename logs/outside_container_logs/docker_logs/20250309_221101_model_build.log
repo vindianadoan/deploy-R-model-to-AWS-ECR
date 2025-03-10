@@ -1,0 +1,67 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.model
+#1 transferring dockerfile: 768B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/r-base-mlops:4.4.1
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/r-base-mlops:4.4.1@sha256:93db6fadbfa23ab60e35e810d216cfe6f179be20285c313b2b4d6bc9ba88008b
+#5 resolve docker.io/library/r-base-mlops:4.4.1@sha256:93db6fadbfa23ab60e35e810d216cfe6f179be20285c313b2b4d6bc9ba88008b
+#5 ...
+
+#6 [auth] library/r-base-mlops:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/r-base-mlops:4.4.1@sha256:93db6fadbfa23ab60e35e810d216cfe6f179be20285c313b2b4d6bc9ba88008b
+#5 ...
+
+#7 [auth] library/r-base-mlops:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/r-base-mlops:4.4.1@sha256:93db6fadbfa23ab60e35e810d216cfe6f179be20285c313b2b4d6bc9ba88008b
+#5 resolve docker.io/library/r-base-mlops:4.4.1@sha256:93db6fadbfa23ab60e35e810d216cfe6f179be20285c313b2b4d6bc9ba88008b 2.5s done
+#5 DONE 2.5s
+
+#8 [2/7] WORKDIR /app
+#8 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 2.88kB done
+#4 DONE 0.0s
+
+#9 [3/7] RUN mkdir -p /app/logs/docker_logs /app/logs/R_logs /app/logs/aws_logs
+#9 DONE 0.5s
+
+#10 [4/7] RUN mkdir -p data
+#10 DONE 0.5s
+
+#11 [5/7] COPY ./R/train.R /app/train.R
+#11 DONE 0.0s
+
+#12 [6/7] COPY ./R/serve.R /app/serve.R
+#12 DONE 0.0s
+
+#13 [7/7] RUN Rscript train.R
+#13 0.862 randomForest 4.7-1.2
+#13 0.862 Type rfNews() to see new features/changes/bug fixes.
+#13 DONE 1.1s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.2s done
+#14 exporting manifest sha256:a684867e94291707167c5732891ded1a57d915962d58611f95b041769e176f91 0.0s done
+#14 exporting config sha256:d048a0f93db829e9597e85a493496d76bca9487701121d9c8c940aa4624b698f 0.0s done
+#14 exporting attestation manifest sha256:04ff2963f523e1d0703ce4f6db5741cd53e2065406ec03de055ff488e8909b19 0.0s done
+#14 exporting manifest list sha256:e134c729f182f85cca20953074addd7b76937c282cb37f31cdaaaa70f4bb93ee 0.0s done
+#14 naming to docker.io/library/my-r-sagemaker-model:latest done
+#14 unpacking to docker.io/library/my-r-sagemaker-model:latest 0.1s done
+#14 DONE 0.4s
