@@ -2,9 +2,21 @@
 library(randomForest)
 library(logger)
 
+# Choose the log directory based on whether /app/logs exists (inside container) or not (outside)
+log_dir <- if (dir.exists("/app/logs")) {
+  "/app/logs/R_logs"
+} else {
+  "logs/outside_container_logs/R_logs"
+}
+
+# Ensure the directory exists; create it if necessary
+if (!dir.exists(log_dir)) {
+  dir.create(log_dir, recursive = TRUE)
+}
+
 # Create a timestamp for the log file name
 timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-log_file <- paste0("outside_container_logs/R_logs/",timestamp,"_training.log")
+log_file <- file.path(log_dir, paste0(timestamp, "_training.log"))
 
 # Configure logger with a unique file name for each run
 log_appender(appender_file(log_file))

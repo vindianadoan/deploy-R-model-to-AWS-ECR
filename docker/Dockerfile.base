@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy your renv lock file to restore R packages
-COPY renv.lock /app/renv.lock
+COPY ./renv.lock /app/renv.lock
 
 # Install renv and restore packages using renv.lock
 RUN R -e "install.packages('renv', repos='http://cran.rstudio.com/'); \

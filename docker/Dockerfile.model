@@ -4,12 +4,13 @@ FROM r-base-mlops:4.4.1
 # Set the working directory
 WORKDIR /app
 
-# (Optional) Create directories for logs if your model/Plumber API writes to them
+# Create directories for logs and model data
 RUN mkdir -p /app/logs/docker_logs /app/logs/R_logs /app/logs/aws_logs
+RUN mkdir -p data
 
 # Copy your model scripts into the container
-COPY train.R /app/train.R
-COPY serve.R /app/serve.R
+COPY ./R/train.R /app/train.R
+COPY ./R/serve.R /app/serve.R
 
 # Run the training script to generate or update your model (e.g. model.rds)
 RUN Rscript train.R
