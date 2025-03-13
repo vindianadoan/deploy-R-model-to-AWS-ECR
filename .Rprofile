@@ -1,4 +1,8 @@
 source("renv/activate.R")
+
+library(logger)
+log_layout(layout_glue_colors)
+
 Sys.setenv(RENV_PATHS_CACHE = "C:\\Users\\Vince\\repos\\common\\renv_cache")
 cat("\033[1;34m-------------------------------------------------\n")
 cat("\033[1;33m👋  Welcome to R!\n")
