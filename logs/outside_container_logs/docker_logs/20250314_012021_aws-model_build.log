@@ -1,0 +1,46 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.awsmodel
+#1 transferring dockerfile: 741B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/r-base-mlops:4.4.1
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/library/r-base-mlops:4.4.1
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 111B done
+#5 DONE 0.0s
+
+#6 [4/8] RUN mkdir -p data
+#6 CACHED
+
+#7 [6/8] COPY ./R/serve.R /app/serve.R
+#7 CACHED
+
+#8 [5/8] COPY ./R/train.R /app/train.R
+#8 CACHED
+
+#9 [7/8] COPY ./R/run_api.R /app/run_api.R
+#9 CACHED
+
+#10 [2/8] WORKDIR /app
+#10 CACHED
+
+#11 [3/8] RUN mkdir -p /app/logs/docker_logs /app/logs/R_logs /app/logs/aws_logs
+#11 CACHED
+
+#12 [8/8] RUN Rscript train.R
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 writing image sha256:f76f62f980de6915c502daf8e221d0f6bd17df4887ef1d9bab888d16aebdf79a done
+#13 naming to docker.io/library/my-r-sagemaker-model 0.0s done
+#13 DONE 0.0s

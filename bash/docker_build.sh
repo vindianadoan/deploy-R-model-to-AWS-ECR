@@ -29,7 +29,7 @@ elif [ "$container_type" = "base" ]; then
 elif [ "$container_type" = "aws-model" ]; then
     # Use Docker Buildx to build and push the image with the correct manifest for SageMaker.
     export DOCKER_CLI_EXPERIMENTAL=enabled
-    docker buildx build --platform linux/amd64 --push -f docker/Dockerfile.model -t my-r-sagemaker-model . > "$log_file" 2>&1
+    docker buildx build --platform linux/amd64 -f docker/Dockerfile.awsmodel -t my-r-sagemaker-model . > "$log_file" 2>&1
 else
     echo "Unknown container type: $container_type. Use 'model', 'base', or 'aws-model'."
     exit 1

@@ -1,0 +1,82 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.model
+#1 transferring dockerfile: 768B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/r-base-mlops:4.4.1
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/r-base-mlops:4.4.1
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 81B done
+#5 DONE 0.0s
+
+#6 [4/7] RUN mkdir -p data
+#6 CACHED
+
+#7 [5/7] COPY ./R/train.R /app/train.R
+#7 CACHED
+
+#8 [6/7] COPY ./R/serve.R /app/serve.R
+#8 CACHED
+
+#9 [2/7] WORKDIR /app
+#9 CACHED
+
+#10 [3/7] RUN mkdir -p /app/logs/docker_logs /app/logs/R_logs /app/logs/aws_logs
+#10 CACHED
+
+#11 [7/7] RUN Rscript train.R
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:1b42e4fda7713463e994ff73e25237f7796eeee2229a4384b40b326a0aea9ddf done
+#12 naming to docker.io/library/my-r-sagemaker-model done
+#12 DONE 0.0s
+
+#13 pushing my-r-sagemaker-model with docker
+#13 pushing layer 40643d6265b6
+#13 pushing layer f2cd89440323
+#13 pushing layer 4c486f62c5b5
+#13 pushing layer 1dc90cc24b0c
+#13 pushing layer b9efa81c8ff0
+#13 pushing layer 5f70bf18a086
+#13 pushing layer f9c2c84cecf1
+#13 pushing layer f62ff2b2d02f
+#13 pushing layer 66366ce47c84
+#13 pushing layer 84e441f83cc5
+#13 pushing layer c7350b3076fe
+#13 pushing layer a1ecf8f78f54
+#13 pushing layer 44cdd08ac304
+#13 pushing layer 90452ad6f5f4
+#13 pushing layer 58829ead47f0
+#13 pushing layer 5969267de1a1
+#13 pushing layer b9efa81c8ff0 1.4s done
+#13 pushing layer 40643d6265b6 1.4s done
+#13 pushing layer f2cd89440323 1.4s done
+#13 pushing layer 4c486f62c5b5 1.4s done
+#13 pushing layer 1dc90cc24b0c 1.4s done
+#13 pushing layer 5f70bf18a086 1.4s done
+#13 pushing layer f9c2c84cecf1 1.4s done
+#13 pushing layer f62ff2b2d02f 1.4s done
+#13 pushing layer 66366ce47c84 1.4s done
+#13 pushing layer 84e441f83cc5 1.4s done
+#13 pushing layer c7350b3076fe 1.4s done
+#13 pushing layer a1ecf8f78f54 1.4s done
+#13 pushing layer 44cdd08ac304 1.4s done
+#13 pushing layer 90452ad6f5f4 1.4s done
+#13 pushing layer 58829ead47f0 1.4s done
+#13 pushing layer 5969267de1a1 1.4s done
+#13 ERROR: denied: requested access to the resource is denied
+------
+ > pushing my-r-sagemaker-model with docker:
+------
+ERROR: denied: requested access to the resource is denied
