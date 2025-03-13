@@ -28,7 +28,16 @@ function(req, res) {
   plumber::forward()
 }
 
-#* @post /predict
+
+# Health check endpoint for SageMaker
+#* @get /ping
+function() {
+  list(status = "Healthy")
+}
+
+
+# Inference endpoint
+#* @post /invocations
 #* @serializer json
 function(req) {
   data <- fromJSON(req$postBody)
@@ -37,3 +46,4 @@ function(req) {
   log_info("Prediction: {paste(pred, collapse=', ')}")
   list(prediction = as.character(pred))
 }
+
